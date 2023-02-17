@@ -1,9 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
-/*
-   * main - print whether n is positive or negative
+/**
+   * main - Print whether n is positive or negative
    *
    * Return: 0
    */
