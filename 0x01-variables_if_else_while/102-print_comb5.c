@@ -14,14 +14,14 @@ int main(void)
 		{
 			for (k = i; k <= '9'; k++)
 			{
-				for (l = (k == i? j + 1 : '0'); l <= '9'; l++)
+				for (l = (k == i ? j + 1 : '0'); l <= '9'; l++)
 				{
 					putchar(i);
 					putchar(j);
 					putchar(' ');
 					putchar(k);
 					putchar(l);
-					if (i == '9' && j == '8' && k == '9' && l == '9' )
+					if (i == '9' && j == '8' && k == '9' && l == '9')
 					{
 						putchar('\n');
 					}
