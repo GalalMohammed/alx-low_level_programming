@@ -7,6 +7,7 @@
 int main(void)
 {
 	short int c = '0';
+
 	for (; c <= '9'; c++)
 		putchar(c);
 	putchar('\n');
