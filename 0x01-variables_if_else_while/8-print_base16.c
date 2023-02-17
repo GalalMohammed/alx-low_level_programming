@@ -11,7 +11,7 @@ int main(void)
 	for (; c <= 'f'; c++)
 	{
 		putchar(c);
-		if (c == 9)
+		if (c == '9')
 			c = 'a' - 1;
 	}
 	putchar('\n');
