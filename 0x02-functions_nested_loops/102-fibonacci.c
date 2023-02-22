@@ -11,7 +11,7 @@ int main(void)
 
 	for (i = 0; i < 50; i++)
 	{
-		printf("%d", cur);
+		printf("%ld", cur);
 		tmp = cur;
 		cur = cur + prev;
 		prev = tmp;
