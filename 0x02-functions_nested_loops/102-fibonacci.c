@@ -7,7 +7,7 @@
   */
 int main(void)
 {
-	long long int prev = 1, cur = 1, i, tmp;
+	long int prev = 1, cur = 1, i, tmp;
 
 	for (i = 0; i < 50; i++)
 	{
