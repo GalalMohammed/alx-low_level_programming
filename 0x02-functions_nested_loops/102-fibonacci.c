@@ -17,6 +17,8 @@ int main(void)
 		prev = tmp;
 		if (i < 49)
 			printf(", ");
+		else
+			printf("\n");
 	}
 	return (0);
 }
