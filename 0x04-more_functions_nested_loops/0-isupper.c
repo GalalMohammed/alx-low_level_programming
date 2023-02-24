@@ -8,5 +8,5 @@
   */
 int _isupper(int c)
 {
-	return (c >= 65 && c <= 65 + 26);
+	return (c >= 65 && c < 65 + 26);
 }
