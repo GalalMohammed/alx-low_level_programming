@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * print_traingle - Yes! You got it right!
+  * print_trangle - Yes! You got it right!
   * @size: that's right too. WOW, you are so smart
   */
 void print_triangle(int size)
@@ -18,7 +18,7 @@ void print_triangle(int size)
 		{
 			_putchar('#');
 		}
-		if ( i != 1)
+		if (i != 1)
 		{
 			_putchar('\n');
 		}
