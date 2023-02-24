@@ -9,23 +9,30 @@
 int main(void)
 {
 	long int num = 612852475143;
-	int start = sqrt(num), i;
+	long int start = sqrt(num), i;
 
 	while (1)
 	{
-		for (i = 2; i < start; i++)
+		if (num % start == 0)
 		{
-			if (start % i == 0)
+			for (i = 2; i < start; i++)
 			{
-				start--;
+				if (start % i == 0)
+				{
+					start--;
+					break;
+				}
+			}
+			if (i == start)
+			{
 				break;
 			}
 		}
-		if (i == start)
+		else
 		{
-			break;
+			start--;
 		}
 	}
-	printf("%d\n", start);
+	printf("%ld\n", start);
 	return (0);
 }
