@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * print_trangle - Yes! You got it right!
+  * print_triangle - Yes! You got it right!
   * @size: that's right too. WOW, you are so smart
   */
 void print_triangle(int size)
