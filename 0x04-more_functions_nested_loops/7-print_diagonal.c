@@ -15,6 +15,10 @@ void print_diagonal(int n)
 			_putchar(' ');
 		}
 		_putchar('\\');
+		if (i != n - 1)
+		{
+			_putchar('\n');
+		}
 	}
 	_putchar('\n');
 }
