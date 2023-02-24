@@ -3,13 +3,13 @@
 /**
   * main - Fizz-Buzz test
   *
-  * Retrun: 0
+  * Return: 0
   */
 int main(void)
 {
 	char i;
 
-	for (i = 0; i <= 100; i++)
+	for (i = 1; i <= 100; i++)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 		{
@@ -19,7 +19,7 @@ int main(void)
 		{
 			printf("Fizz");
 		}
-		else if(i % 5 == 0)
+		else if (i % 5 == 0)
 		{
 			printf("Buzz");
 		}
