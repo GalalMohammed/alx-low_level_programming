@@ -6,6 +6,7 @@
 void more_numbers(void)
 {
 	char c, i, last_five[] = "1011121314";
+	int s;
 
 	for (i = 0; i < 10; i++)
 	{
@@ -13,9 +14,9 @@ void more_numbers(void)
 		{
 			_putchar(c);
 		}
-		for (c = 0; last_five[c] != '\0'; c++)
+		for (s = 0; last_five[s] != '\0'; s++)
 		{
-			_putchar(last_five[c]);
+			_putchar(last_five[s]);
 		}
 		_putchar('\n');
 	}
