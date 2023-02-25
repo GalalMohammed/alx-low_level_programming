@@ -8,31 +8,32 @@
   */
 int main(void)
 {
-	long int num = 612852475143;
-	long int start = sqrt(num), i;
-
-	while (1)
+	long int num = 612852475143, i, j;
+	while (num % 2 == 0)
 	{
-		if (num % start == 0)
+		num /= 2;
+	}
+	for (i = 3; i < num; i += 2)
+	{
+		for (j = 3; j < i; j += 2)
 		{
-			for (i = 2; i < start; i++)
-			{
-				if (start % i == 0)
-				{
-					start--;
-					break;
-				}
-			}
-			if (i == start)
+			if (i % j == 0)
 			{
 				break;
 			}
 		}
-		else
+		if (j == i)
 		{
-			start--;
+			while (num % i == 0)
+			{
+				num /= i;
+			}
+		}
+		if (num == 1)
+		{
+			break;
 		}
 	}
-	printf("%ld\n", start);
+	printf("%ld\n", i);
 	return (0);
 }
