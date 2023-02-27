@@ -19,5 +19,6 @@ void puts2(char *str)
 		{
 			flag = 1;
 		}
+		str++;
 	}
 }
