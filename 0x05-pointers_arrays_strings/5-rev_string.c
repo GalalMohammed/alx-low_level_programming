@@ -19,15 +19,14 @@ void swapchar(char *c1, char *c2)
   */
 void rev_string(char *s)
 {
-	char *s_end = s, i = 0;
+	char *s_end = s;
 
 	while (*s_end != '\0')
 	{
 		s_end++;
-		i++;
 	}
 	s_end--;
-	while (s != s_end)
+	while (s < s_end)
 	{
 		swapchar(s, s_end);
 		s++;
