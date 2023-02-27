@@ -34,5 +34,5 @@ void puts2(char*);
 void puts_half(char*);
 void print_array(int*, int);
 char *_strcpy(char*, char*);
-
+int _atoi(char*);
 #endif /* MAIN_H */
