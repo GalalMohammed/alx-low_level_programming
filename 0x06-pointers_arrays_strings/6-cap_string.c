@@ -14,31 +14,10 @@ char *cap_string(char *str)
 	cpy++;
 	while (*cpy != '\0')
 	{
-		if (*cpy == ' ' || *cpy == '\n' || *cpy == '\t' || *cpy == '.')
-		{
-			cpy++;
-			if (*cpy >= 97 && *cpy < 97 + 26)
-			{
-			*cpy -= 32;
-			}
-		}
-		else if (*cpy == ',' || *cpy == ';' || *cpy == '!' || *cpy == '?')
-		{
-			cpy++;
-			if (*cpy >= 97 && *cpy < 97 + 26)
-			{
-			*cpy -= 32;
-			}
-		}
-		else if (*cpy == '"' || *cpy == '(' || *cpy == ')' || *cpy == '{')
-		{
-			cpy++;
-			if (*cpy >= 97 && *cpy < 97 + 26)
-			{
-			*cpy -= 32;
-			}
-		}
-		else if (*cpy == '}')
+		if (*cpy == ' ' || *cpy == '\n' || *cpy == '\t' || *cpy == '.'\
+				|| *cpy == ',' || *cpy == ';' || *cpy == '!'\
+				|| *cpy == '?' || *cpy == '"' || *cpy == '('\
+				|| *cpy == ')' || *cpy == '{' || *cpy == '}')
 		{
 			cpy++;
 			if (*cpy >= 97 && *cpy < 97 + 26)
