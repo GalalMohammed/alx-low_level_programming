@@ -22,7 +22,7 @@ char *cap_string(char *str)
 			*cpy -= 32;
 			}
 		}
-		if (*cpy == ',' || *cpy == ';' || *cpy == '!' || *cpy == '?')
+		else if (*cpy == ',' || *cpy == ';' || *cpy == '!' || *cpy == '?')
 		{
 			cpy++;
 			if (*cpy >= 97 && *cpy < 97 + 26)
@@ -30,7 +30,7 @@ char *cap_string(char *str)
 			*cpy -= 32;
 			}
 		}
-		if (*cpy == '"' || *cpy == '(' || *cpy == ')' || *cpy == '{')
+		else if (*cpy == '"' || *cpy == '(' || *cpy == ')' || *cpy == '{')
 		{
 			cpy++;
 			if (*cpy >= 97 && *cpy < 97 + 26)
@@ -38,7 +38,7 @@ char *cap_string(char *str)
 			*cpy -= 32;
 			}
 		}
-		if (*cpy == '}')
+		else if (*cpy == '}')
 		{
 			cpy++;
 			if (*cpy >= 97 && *cpy < 97 + 26)
@@ -46,7 +46,10 @@ char *cap_string(char *str)
 			*cpy -= 32;
 			}
 		}
-		cpy++;
+		else
+		{
+			cpy++;
+		}
 	}
 	return (str);
 }
