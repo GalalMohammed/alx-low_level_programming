@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
   * print_number - prin7s 4n in7
@@ -7,7 +8,7 @@
 void print_number(int n)
 {
 	char sign = n < 0 ? -1 : 1;
-	unsigned int rev = 0, ncpy, dig = 0;
+	unsigned int rev = 0, ncpy, dig = 0, last_dig;
 
 	if (n < 0)
 	{
@@ -27,7 +28,14 @@ void print_number(int n)
 	while (ncpy)
 	{
 		dig++;
-		rev = rev * 10 + ncpy % 10;
+		if (ncpy / 10 > 0)
+		{
+			rev = rev * 10 + ncpy % 10;
+		}
+		else
+		{
+			last_dig = ncpy % 10;
+		}
 		ncpy /= 10;
 	}
 	if (sign == -1)
@@ -36,7 +44,12 @@ void print_number(int n)
 	}
 	while (dig--)
 	{
-		if (rev)
+		if (last_dig)
+		{
+			_putchar('0' + last_dig % 10);
+			last_dig /= 10;
+		}
+		else if (rev)
 		{
 			_putchar('0' + rev % 10);
 			rev /= 10;
