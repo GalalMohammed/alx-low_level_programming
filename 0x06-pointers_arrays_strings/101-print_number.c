@@ -7,11 +7,18 @@
 void print_number(int n)
 {
 	char sign = n < 0 ? -1 : 1;
-	int rev = 0, ncpy = n, dig = 0;
+	unsigned int rev = 0, ncpy, dig = 0;
 
 	if (n < 0)
 	{
+		n++;
 		n *= -1;
+		ncpy = (unsigned int)n;
+		ncpy++;
+	}
+	else
+	{
+		ncpy = n;
 	}
 	if (n == 0)
 	{
