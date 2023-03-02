@@ -21,8 +21,8 @@ char *rot13(char *str)
 	}
 	while (*cpy != '\0')
 	{
-		if (*cpy >= 65 && *cpy < 65 + 26 ||
-				*cpy >= 97 && *cpy < 97 + 26)
+		if ((*cpy >= 65 && *cpy < 65 + 26) ||
+				(*cpy >= 97 && *cpy < 97 + 26))
 		{
 			*cpy = dic[(int)*cpy];
 		}
