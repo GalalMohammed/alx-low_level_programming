@@ -10,11 +10,17 @@ char *leet(char *str)
 {
 	char dic['t' + 1];
 	char *strcpy = str;
-	dic['a'] = dic['A'] = 4;
-	dic['e'] = dic['E'] = 3;
-	dic['o'] = dic['O'] = 0;
-	dic['t'] = dic['T'] = 7;
-	dic['l'] = dic['L'] = 1;
+
+	dic['a'] = '4';
+	dic['A'] = '4';
+	dic['e'] = '3';
+	dic['E'] = '3';
+	dic['o'] = '0';
+	dic['O'] = '0';
+	dic['t'] = '7';
+	dic['T'] = '7';
+	dic['l'] = '1';
+	dic['L'] = '1';
 	while (*strcpy != '\0')
 	{
 		if (*strcpy == 'a' || *strcpy == 'A' || *strcpy == 'e'
@@ -23,7 +29,7 @@ char *leet(char *str)
 				|| *strcpy == 'T' || *strcpy == 'l'
 				|| *strcpy == 'L')
 		{
-			*strcpy = dic[*strcpy];
+			*strcpy = dic[(int)*strcpy];
 		}
 		strcpy++;
 	}
