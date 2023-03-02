@@ -10,7 +10,7 @@ void print_number(int n)
 	char sign = n < 0 ? -1 : 1;
 	unsigned int rev = 0, ncpy, dig = 0, last_dig = 0;
 
-	ncpy = n < 0 ? (unsigned int)((n + 1) * -1) + 1 : n;
+	ncpy = n < 0 ? (unsigned int)((n + 1) * -1) + 1 : (unsigned int)n;
 	if (n == 0)
 	{
 		dig = 1;
