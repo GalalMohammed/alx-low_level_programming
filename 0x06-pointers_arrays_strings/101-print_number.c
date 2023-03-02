@@ -8,19 +8,9 @@
 void print_number(int n)
 {
 	char sign = n < 0 ? -1 : 1;
-	unsigned int rev = 0, ncpy, dig = 0, last_dig;
+	unsigned int rev = 0, ncpy, dig = 0, last_dig = 0;
 
-	if (n < 0)
-	{
-		n++;
-		n *= -1;
-		ncpy = (unsigned int)n;
-		ncpy++;
-	}
-	else
-	{
-		ncpy = n;
-	}
+	ncpy = n < 0 ? (unsigned int)((n + 1) * -1) + 1 : n;
 	if (n == 0)
 	{
 		dig = 1;
@@ -29,21 +19,14 @@ void print_number(int n)
 	{
 		dig++;
 		if (ncpy / 10 > 0)
-		{
 			rev = rev * 10 + ncpy % 10;
-		}
 		else
-		{
 			last_dig = ncpy % 10;
-		}
 		ncpy /= 10;
 	}
 	if (sign == -1)
-	{
 		_putchar('-');
-	}
 	while (dig--)
-	{
 		if (last_dig)
 		{
 			_putchar('0' + last_dig % 10);
@@ -55,8 +38,5 @@ void print_number(int n)
 			rev /= 10;
 		}
 		else
-		{
 			_putchar('0');
-		}
-	}
 }
