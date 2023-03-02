@@ -13,6 +13,10 @@ void print_number(int n)
 	{
 		n *= -1;
 	}
+	if (n == 0)
+	{
+		dig = 1;
+	}
 	while (ncpy)
 	{
 		dig++;
