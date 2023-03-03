@@ -32,13 +32,15 @@ void zeroR(char *r)
   * handleCarry - handles carry
   * @size_r: buffer size
   * @maxlen: biggest num len
-  * @rcpy: copy of buffer pointer
+  * @r: buffer pointer
   * @carry: carry amount
   *
   * Return: 0 if overflow, 1 otherwise
   */
-int handleCarry(int size_r, int maxlen, char *rcpy, int carry)
+int handleCarry(int size_r, int maxlen, char *r, int carry)
 {
+	char *rcpy = r;
+
 	if (size_r >= maxlen + 2)
 	{
 		while (*rcpy != '\0')
