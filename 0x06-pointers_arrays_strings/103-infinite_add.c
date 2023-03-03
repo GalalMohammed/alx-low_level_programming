@@ -77,7 +77,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	n2counter = numcounter(n2);
 	maxlen = n1counter > n2counter ? n1counter : n2counter;
 	if (size_r < n1counter + 1 || size_r < n2counter + 1)
-		return (r);
+		return (0);
 	if (n1counter >= n2counter)
 		*(r + n1counter + 1) = '\0';
 	else
@@ -106,6 +106,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			*(r + n2counter) = '0' + res % 10;
 	}
 	if (carry && handleCarry(size_r, maxlen, r, carry) == 0)
-		zeroR(r);
+		return (0);
 	return (r);
 }
