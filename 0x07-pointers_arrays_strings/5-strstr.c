@@ -15,21 +15,21 @@ char *_strstr(char *haystack, char *needle)
 	while (*haystack != '\0')
 	{
 		needlecpy = needle;
-		haystackcpy = heystack;
+		haystackcpy = haystack;
 		while (*needlecpy != '\0')
 		{
-			if (*needlecpy != *haystackcpu)
+			if (*needlecpy != *haystackcpy)
 			{
 				break;
 			}
 			needlecpy++;
-			heystackcpy++;
+			haystackcpy++;
 		}
 		if (*needlecpy == '\0')
 		{
-			return (heystack);
+			return (haystack);
 		}
-		heystack++;
+		haystack++;
 	}
 	return ((void *)'\0');
 }
