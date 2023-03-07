@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * strchr - locates a char in an str
+  * _strchr - locates a char in an str
   * @s: string
   * @c: char to be located
   *
@@ -16,6 +16,10 @@ char *_strchr(char *s, char c)
 			return (s);
 		}
 		s++;
+	}
+	if (c == '\0')
+	{
+		return (s);
 	}
 	return ((void *)'\0');
 }
