@@ -48,5 +48,6 @@ void print_number(int);
 char *infinite_add(char*, char*, char*, int);
 char *_memset(char*, char, unsigned int);
 char *_memcpy(char*, char*, unsigned int);
+char *_strchr(char*, char);
 
 #endif /* MAIN_H */
