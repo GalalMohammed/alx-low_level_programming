@@ -14,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 
 	while (*s != '\0')
 	{
-		*acceptcpy = accept;
+		acceptcpy = accept;
 		while (*acceptcpy != '\0')
 		{
 			if (*s == *acceptcpy)
