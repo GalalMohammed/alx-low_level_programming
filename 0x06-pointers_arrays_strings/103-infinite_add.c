@@ -19,16 +19,6 @@ int numcounter(char *n)
 }
 
 /**
-  * zeroR - make r = 0
-  * @r: buffer
-  */
-void zeroR(char *r)
-{
-	*r = '0';
-	*(r + 1) = '\0';
-}
-
-/**
   * handleCarry - handles carry
   * @size_r: buffer size
   * @maxlen: biggest num len
@@ -48,9 +38,11 @@ int handleCarry(int size_r, int maxlen, char *r, int carry)
 		while (rcpy >= r)
 		{
 			*(rcpy + 1) = *rcpy;
-			rcpy--;
+			if (rcpy != r)
+			{
+				rcpy--;
+			}
 		}
-		rcpy++;
 		*rcpy = '0' + carry;
 		return (1);
 	}
@@ -72,7 +64,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int n1counter, n2counter = 0, res, carry = 0, op1 = 0, op2 = 0,
 	    maxlen = 0;
 
-	zeroR(r);
 	n1counter = numcounter(n1);
 	n2counter = numcounter(n2);
 	maxlen = n1counter > n2counter ? n1counter : n2counter;
