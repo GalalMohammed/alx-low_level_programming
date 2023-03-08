@@ -65,18 +65,18 @@ int handleCarry(int size_r, int maxlen, char *r, int carry)
   */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int n1counter, n2counter = 0, res, carry = 0, op1 = 0, op2 = 0/*,
-	    maxlen = 0*/;
+	int n1counter, n2counter = 0, res, carry = 0, op1 = 0, op2 = 0,
+	    maxlen = 0;
 
 	n1counter = numcounter(n1);
 	n2counter = numcounter(n2);
-	/*maxlen = n1counter > n2counter ? n1counter : n2counter;*/
+	maxlen = n1counter > n2counter ? n1counter : n2counter;
 	if (size_r < n1counter + 1 || size_r < n2counter + 1)
 		return (0);
 	if (n1counter >= n2counter)
-		*(r + n1counter + 1) = '\0';
+		*(r + n1counter) = '\0';
 	else
-		*(r + n2counter + 1) = '\0';
+		*(r + n2counter) = '\0';
 	while (n1counter || n2counter)
 	{
 		if (n1counter)
@@ -100,7 +100,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			*(r + n2counter) = '0' + res % 10;
 	}
-	/*if (carry && handleCarry(size_r, maxlen, r, carry) == 0)
-		return (0);*/
+	if (carry && handleCarry(size_r, maxlen, r, carry) == 0)
+		return (0);
 	return (r);
 }
