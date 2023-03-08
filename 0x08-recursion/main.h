@@ -56,5 +56,6 @@ void print_chessboard(char(*)[8]);
 void print_diagsums(int*, int);
 void set_string(char**, char*);
 void _puts_recursion(char*);
+void _print_rev_recursion(char*);
 
 #endif /* MAIN_H */
