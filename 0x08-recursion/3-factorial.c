@@ -4,7 +4,7 @@
   * factorial - copmutes factorial of num
   * @n: num to be computed
   *
-  * Return : factorial of num
+  * Return: factorial of num
   */
 int factorial(int n)
 {
