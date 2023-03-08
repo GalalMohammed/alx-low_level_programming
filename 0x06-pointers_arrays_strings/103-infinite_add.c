@@ -47,8 +47,7 @@ int handleCarry(int size_r, int maxlen, char *r, int carry)
 				break;
 			}
 		}
-		/**rcpy = '0' + carry;*/
-		*rcpy = *rcpy > carry ? *rcpy : *rcpy;
+		*rcpy = '0' + carry;
 		return (1);
 	}
 	else
@@ -101,7 +100,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			*(r + n2counter) = '0' + res % 10;
 	}
-	if (carry && handleCarry(size_r, maxlen, r, carry) == 0)
-		return (0);
+	/*if (carry && handleCarry(size_r, maxlen, r, carry) == 0)
+		return (0);*/
 	return (r);
 }
