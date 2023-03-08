@@ -47,7 +47,7 @@ int handleCarry(int size_r, int maxlen, char *r, int carry)
 				break;
 			}
 		}
-		*rcpy = '0' + carry;
+		/**rcpy = '0' + carry;*/
 		return (1);
 	}
 	else
