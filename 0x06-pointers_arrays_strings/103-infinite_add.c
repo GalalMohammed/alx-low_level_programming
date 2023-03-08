@@ -42,6 +42,10 @@ int handleCarry(int size_r, int maxlen, char *r, int carry)
 			{
 				rcpy--;
 			}
+			else
+			{
+				break;
+			}
 		}
 		*rcpy = '0' + carry;
 		return (1);
