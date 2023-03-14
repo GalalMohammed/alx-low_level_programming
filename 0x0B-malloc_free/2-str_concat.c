@@ -59,7 +59,8 @@ char *str_concat(char *s1, char *s2)
 	else
 	{
 		str = (char *)malloc(sizeof(char));
-		str[0] = '\0';
+		strcpy = str;
+		*strcpy = '\0';
 	}
 	return (str);
 }
