@@ -62,5 +62,6 @@ int factorial(int);
 int _pow_recursion(int, int);
 int _sqrt_recursion(int);
 char *create_array(unsigned int, char);
+char *_strdup(char *);
 
 #endif /* MAIN_H */
