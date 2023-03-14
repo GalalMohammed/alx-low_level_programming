@@ -20,11 +20,12 @@ int main(int argc, char *argv[])
 		arg = argv[i];
 		while (*arg != '\0')
 		{
-			if (isdigit(*arg) != 1)
+			if (!isdigit(*arg))
 			{
 				printf("Error\n");
 				return (1);
 			}
+			arg++;
 		}
 		sum += atoi(argv[i]) > 0 ? atoi(argv[i]) : 0;
 		i++;
