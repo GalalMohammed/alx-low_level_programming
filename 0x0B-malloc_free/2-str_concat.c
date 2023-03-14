@@ -38,29 +38,35 @@ char *str_concat(char *s1, char *s2)
 		len = len1 + len2;
 		s1cpy = s1;
 		s2cpy = s2;
-		while (len--)
+		if (str != (void *)'\0')
 		{
-			if (len1 > 1)
+			while (len--)
 			{
-				*strcpy = *s1cpy;
-				s1cpy++;
-				len1--;
+				if (len1 > 1)
+				{
+					*strcpy = *s1cpy;
+					s1cpy++;
+					len1--;
+				}
+				else if (len2 > 1)
+				{
+					*strcpy = *s2cpy;
+					s2cpy++;
+					len2--;
+				}
+				strcpy++;
 			}
-			else if (len2 > 1)
-			{
-				*strcpy = *s2cpy;
-				s2cpy++;
-				len2--;
-			}
-			strcpy++;
+			*strcpy = '\0';
 		}
-		*strcpy = '\0';
 	}
 	else
 	{
 		str = (char *)malloc(sizeof(char));
 		strcpy = str;
-		*strcpy = '\0';
+		if (str != (void *)'\0')
+		{
+			*strcpy = '\0';
+		}
 	}
 	return (str);
 }
