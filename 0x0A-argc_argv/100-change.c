@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 			cents -= coin5 * 5;
 			coin2 = cents / 2;
 			cents -= coin2 * 2;
-			printf("%d", coin25 + coin10 + coin5 + coin2 + cents);
+			printf("%d\n", coin25 + coin10 + coin5 + coin2 + cents);
 		}
 		return (0);
 	}
