@@ -2,6 +2,29 @@
 #include <stdlib.h>
 
 /**
+  * _strlen - computes len of str
+  * @s: str
+  *
+  * Return: len of str
+  */
+int _strlen(char *s)
+{
+	char *scpy = s;
+	int len = 0;
+
+	if (s != (void *)'\0')
+	{
+		while (*scpy != '\0')
+		{
+			len++;
+			scpy++;
+		}
+		len++;
+	}
+	return (len);
+}
+
+/**
   * str_concat - concats 2 strs
   * @s1: first str
   * @s2: second str
@@ -13,24 +36,8 @@ char *str_concat(char *s1, char *s2)
 	char *s1cpy = s1, *s2cpy = s2, *str, *strcpy;
 	int len1 = 0, len2 = 0, len;
 
-	if (s1 != (void *)'\0')
-	{
-		while (*s1cpy != '\0')
-		{
-			len1++;
-			s1cpy++;
-		}
-		len1++;
-	}
-	if (s2 != (void *)'\0')
-	{
-		while (*s2cpy != '\0')
-		{
-			len2++;
-			s2cpy++;
-		}
-		len2++;
-	}
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
 	if (len1 || len2)
 	{
 		str = (char *)malloc((len1 - 1 + len2) * sizeof(char));
@@ -62,11 +69,8 @@ char *str_concat(char *s1, char *s2)
 	else
 	{
 		str = (char *)malloc(sizeof(char));
-		strcpy = str;
 		if (str != (void *)'\0')
-		{
-			*strcpy = '\0';
-		}
+			*str = '\0';
 	}
 	return (str);
 }
