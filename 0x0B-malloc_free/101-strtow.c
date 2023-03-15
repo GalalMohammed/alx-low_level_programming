@@ -44,11 +44,11 @@ void free_array(char **array, int size)
   */
 char **strtow(char *str)
 {
-	if (str == (void *)'\0' || *str == '\0')
-		return ((void *)'\0');
 	char *strcpy = str, **wordsArray;
 	int words = 1, len, wordIndex = 0, i;
 
+	if (str == (void *)'\0' || *str == '\0')
+		return ((void *)'\0');
 	words += wordsCounter(str);
 	if (words == 1)
 		return ((void *)'\0');
