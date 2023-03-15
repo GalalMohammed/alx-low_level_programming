@@ -17,10 +17,6 @@ void free_grid(int **grid, int height)
 				free(grid[height]);
 			}
 		}
-		if (grid[0] != (void *)'\0')
-		{
-			free(grid[0]);
-		}
 		free(grid);
 	}
 }
