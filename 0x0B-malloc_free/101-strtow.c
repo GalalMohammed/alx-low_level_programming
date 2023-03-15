@@ -28,6 +28,10 @@ char **strtow(char *str)
 			}
 			strcpy++;
 		}
+		if (!words)
+		{
+			return ((void *)'\0');
+		}
 		wordsArray = (char **)malloc(words * sizeof(char *));
 		if (wordsArray != (void *)'\0')
 		{
