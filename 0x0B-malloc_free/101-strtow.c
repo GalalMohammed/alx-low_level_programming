@@ -28,7 +28,7 @@ char **strtow(char *str)
 			}
 			strcpy++;
 		}
-		if (!words)
+		if (words == 1)
 		{
 			return ((void *)'\0');
 		}
