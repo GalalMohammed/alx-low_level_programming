@@ -12,9 +12,15 @@ void free_grid(int **grid, int height)
 	{
 		while (height--)
 		{
-			free(grid[height]);
+			if (grid[height] != (void *)'\0')
+			{
+				free(grid[height]);
+			}
 		}
-		free(grid[0]);
+		if (grid[0] != (void *)'\0')
+		{
+			free(grid[0]);
+		}
 		free(grid);
 	}
 }
