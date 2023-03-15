@@ -55,7 +55,10 @@ char **strtow(char *str)
 					for (i = 0; i < len; i++)
 					{
 						wordsArray[wordIndex][i] = *strcpy;
-						strcpy++;
+						if (i < len - 1)
+						{
+							strcpy++;
+						}
 					}
 					wordsArray[wordIndex][len] = '\0';
 					wordIndex++;
