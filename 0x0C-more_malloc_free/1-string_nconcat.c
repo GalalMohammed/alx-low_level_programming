@@ -41,14 +41,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	len2 = _strlen(s2);
 	if (len1 || len2)
 	{
-		str = (char *)malloc((len1 - 1 + len2) * sizeof(char));
+		len = len1 + ((len2 - 1) < n ? len2 - 1 : n);
+		str = malloc((len1) * sizeof(char));
 		strcpy = str;
-		len = len1 + len2;
 		s1cpy = s1;
 		s2cpy = s2;
 		if (str != (void *)'\0')
 		{
-			while (len-- && n)
+			while (len--)
 			{
 				if (len1 > 1)
 				{
