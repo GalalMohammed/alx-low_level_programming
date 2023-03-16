@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (len1 || len2)
 	{
 		len = len1 + ((len2 - 1) < n ? len2 - 1 : n);
-		str = malloc((len1) * sizeof(char));
+		str = malloc((len) * sizeof(char));
 		strcpy = str;
 		s1cpy = s1;
 		s2cpy = s2;
