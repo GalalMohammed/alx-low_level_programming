@@ -35,7 +35,7 @@ int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s1cpy = s1, *s2cpy = s2, *str, *strcpy;
-	int len1 = 0, len2 = 0, len;
+	unsigned int len1 = 0, len2 = 0, len;
 
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
