@@ -69,5 +69,6 @@ void free_grid(int **, int);
 char *argstostr(int, char **);
 char **strtow(char *);
 void *malloc_checked(unsigned int);
+char *string_nconcat(char *, char *, unsigned int);
 
 #endif /* MAIN_H */
