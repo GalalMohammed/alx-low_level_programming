@@ -48,7 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2cpy = s2;
 		if (str != (void *)'\0')
 		{
-			while (len--)
+			while (len-- && n)
 			{
 				if (len1 > 1)
 				{
