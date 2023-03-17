@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
   * _strlen - computes len of str
   * @s: str
@@ -19,7 +19,6 @@ int _strlen(char *s)
 			len++;
 			scpy++;
 		}
-		len++;
 	}
 	return (len);
 }
@@ -39,10 +38,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
-	if (len1 || len2)
+	if (len1 || (len2 && n))
 	{
-		len = len1 + ((len2 - 1) < n ? len2 - 1 : n);
-		str = malloc((len) * sizeof(char));
+		len = len1 + (len2 < n ? len2 : n);
+		str = malloc((len + 1) * sizeof(char));
 		strcpy = str;
 		s1cpy = s1;
 		s2cpy = s2;
@@ -50,13 +49,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			while (len--)
 			{
-				if (len1 > 1)
+				if (len1)
 				{
 					*strcpy = *s1cpy;
 					s1cpy++;
 					len1--;
 				}
-				else if (len2 > 1 && n--)
+				else if (len2 && n--)
 				{
 					*strcpy = *s2cpy;
 					s2cpy++;
