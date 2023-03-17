@@ -23,8 +23,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		if (ptr != (void *)'\0')
 		{
 			free(ptr);
+			return ((void *)'\0');
 		}
-		return ((void *)'\0');
 	}
 	new_ptr = malloc(new_size);
 	if (new_ptr == (void *)'\0')
