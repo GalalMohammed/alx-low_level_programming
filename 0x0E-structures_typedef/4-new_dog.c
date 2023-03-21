@@ -47,6 +47,7 @@ char *_strdup(char *str)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d = malloc(sizeof(dog_t));
+
 	if (d != (void *)'\0')
 	{
 		name = _strdup(name);
@@ -59,6 +60,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		}
 		else
 		{
+			free(d);
 			return ((void *)'\0');
 		}
 	}
