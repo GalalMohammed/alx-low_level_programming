@@ -43,9 +43,7 @@ void print_all(const char * const format, ...)
 		}
 		s++;
 		if (*s && printed)
-		{
 			printf(", ");
-		}
 	}
 	va_end(args);
 	printf("\n");
