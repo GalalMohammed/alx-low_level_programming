@@ -19,7 +19,7 @@ typedef struct listint_s
 int _putchar(char);
 size_t print_listint(const listint_t *);
 size_t listint_len(const listint_t *);
-listint_t *add_node(listint_t **, const char *);
+listint_t *add_node(listint_t **, const int);
 listint_t *add_node_end(listint_t **, const char *);
 void free_listint(listint_t *);
 
