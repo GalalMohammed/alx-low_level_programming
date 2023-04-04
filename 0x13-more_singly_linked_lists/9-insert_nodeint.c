@@ -50,7 +50,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 				ptr = ptr->next;
 				i++;
 			}
-			if (ptr && i + 2 == idx && ptr->next)
+			if (ptr && i + 2 == idx)
 			{
 				ptr->next = add_nodeint(&(ptr->next), n);
 				ptr = ptr->next;
