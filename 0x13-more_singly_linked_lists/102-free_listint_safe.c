@@ -5,7 +5,7 @@
   * free_listint_safe - frees a listint_t list and sets head to NULL
   * @head: head of list
   *
-  * Return: size of free'd list
+  * Return: number of free'd nodes
   */
 size_t free_listint_safe(listint_t **head)
 {
@@ -30,7 +30,7 @@ size_t free_listint_safe(listint_t **head)
 						free(p_it);
 					}
 					*head = (void *)'\0';
-					return (sizeof(listint_t) * nodes);
+					return (nodes);
 				}
 				p_it = p_it->next;
 			}
@@ -48,5 +48,5 @@ size_t free_listint_safe(listint_t **head)
 		}
 		*head = (void *)'\0';
 	}
-	return (sizeof(listint_t) * nodes);
+	return (nodes);
 }
