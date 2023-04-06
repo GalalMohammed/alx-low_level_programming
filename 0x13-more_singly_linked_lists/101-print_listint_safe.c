@@ -3,19 +3,6 @@
 #include <stdlib.h>
 
 /**
-  * struct listp_s - singly linked list
-  * @p: pointer
-  * @next: points to the next node
-  *
-  * Description: singly linked list node structure
-  */
-typedef struct listp_s
-{
-	const listint_t *p;
-	struct listp_s *next;
-} listp_t;
-
-/**
   * add_nodep - adds a new node at the beginning of a listp_t list
   * @head: pointer to head
   * @p: pointer to be added
@@ -57,7 +44,7 @@ size_t print_listint_safe(const listint_t *h)
 			if (p_it->p == ptr)
 			{
 				printf("-> [%p] %d\n", (void *)ptr, ptr->n);
-				exit(98);
+				return (nodes);
 			}
 			p_it = p_it->next;
 		}
