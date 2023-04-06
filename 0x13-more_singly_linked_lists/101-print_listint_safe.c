@@ -43,6 +43,12 @@ size_t print_listint_safe(const listint_t *h)
 		{
 			if (p_it->p == ptr)
 			{
+				while (phead)
+				{
+					p_it = phead;
+					phead = phead->next;
+					free(p_it);
+				}
 				printf("-> [%p] %d\n", (void *)ptr, ptr->n);
 				return (nodes);
 			}
@@ -52,6 +58,12 @@ size_t print_listint_safe(const listint_t *h)
 		printf("[%p] %d\n", (void *)ptr, ptr->n);
 		nodes++;
 		ptr = ptr->next;
+	}
+	while (phead)
+	{
+		p_it = phead;
+		phead = phead->next;
+		free(p_it);
 	}
 	return (nodes);
 }
