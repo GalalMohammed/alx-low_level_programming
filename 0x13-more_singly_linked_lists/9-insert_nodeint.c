@@ -14,7 +14,6 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
 	if (!new_node)
 	{
-		free(new_node);
 		return ((void *)'\0');
 	}
 	new_node->n = n;
@@ -36,29 +35,26 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i = -1;
 	listint_t *ptr = (void *)'\0';
 
-	if (head)
+	if (idx == 0)
 	{
-		if (*head && idx == 0)
+		ptr = add_nodeint(head, n);
+	}
+	else if (head)
+	{
+		ptr = *head;
+		while (ptr && i + 2 < idx)
 		{
-			ptr = add_nodeint(head, n);
+			ptr = ptr->next;
+			i++;
+		}
+		if (ptr && i + 2 == idx)
+		{
+			add_nodeint(&(ptr->next), n);
+			ptr = ptr->next;
 		}
 		else
 		{
-			ptr = *head;
-			while (ptr && i + 2 < idx)
-			{
-				ptr = ptr->next;
-				i++;
-			}
-			if (ptr && i + 2 == idx)
-			{
-				add_nodeint(&(ptr->next), n);
-				ptr = ptr->next;
-			}
-			else
-			{
-				ptr = (void *)'\0';
-			}
+			ptr = (void *)'\0';
 		}
 	}
 	return (ptr);
