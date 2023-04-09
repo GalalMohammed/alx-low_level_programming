@@ -6,7 +6,7 @@
   */
 void print_binary(unsigned long int n)
 {
-	unsigned long int checker = 0x80000000;
+	unsigned long int checker = 0x80000000L;
 	char non_zero = 0;
 
 	if (n)
