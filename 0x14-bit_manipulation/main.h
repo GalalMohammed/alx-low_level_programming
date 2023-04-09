@@ -74,5 +74,6 @@ void *_calloc(unsigned int, unsigned int);
 int *array_range(int, int);
 void *_realloc(void *, unsigned int, unsigned int);
 unsigned int binary_to_uint(const char *);
+void print_binary(unsigned long int);
 
 #endif /* MAIN_H */
