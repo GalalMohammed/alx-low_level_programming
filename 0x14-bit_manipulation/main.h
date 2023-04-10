@@ -76,5 +76,6 @@ void *_realloc(void *, unsigned int, unsigned int);
 unsigned int binary_to_uint(const char *);
 void print_binary(unsigned long int);
 int get_bit(unsigned long int, unsigned int);
+int set_bit(unsigned long int *, unsigned int);
 
 #endif /* MAIN_H */
