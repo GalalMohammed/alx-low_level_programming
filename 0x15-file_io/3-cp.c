@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	{
 		int fd_from = open(argv[1], O_RDONLY), i = 0, success;
 		int fd_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-		char buffer[1024], format[] = "Error: Can't write to file %s\n";
+		char buffer[1024];
 
 		test(fd_from, 98, argv[1], 0);
 		test(fd_to, 99, argv[2], 0);
