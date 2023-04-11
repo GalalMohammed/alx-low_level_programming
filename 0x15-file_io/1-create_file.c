@@ -3,7 +3,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
+
 /**
   * _strlen - computes len of a string
   * @s: string to be checked
