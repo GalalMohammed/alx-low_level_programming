@@ -44,11 +44,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht)
 		return (0);
-	else
-		/* computes the index */
-		index = key_index((const unsigned char *)key, ht->size);
-	/* check for empty list */
-	if (!ht->array[index])
+	index = key_index((const unsigned char *)key, ht->size);
+	if (index >= size)
+		return (0);
+	if (!ht->array[index]) /* check for empty list */
 		/* key does not exist */
 		/* insert directly */
 	{
@@ -70,8 +69,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				strcpy(ptr->value, value);
 				return (1);
 			}
-			/* update pointer */
-			ptr = ptr->next;
+			ptr = ptr->next; /* update pointer */
 		} while (!ptr);
 		/* scenario 2: insertion at head */
 		node = create_node(key, value);
