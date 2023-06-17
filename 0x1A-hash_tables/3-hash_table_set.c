@@ -70,7 +70,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				return (1);
 			}
 			ptr = ptr->next; /* update pointer */
-		} while (!ptr);
+		} while (ptr);
 		/* scenario 2: insertion at head */
 		node = create_node(key, value);
 		if (!node)
