@@ -21,6 +21,8 @@ hash_node_t *create_node(const char *key, const char *value)
 	node->key = malloc(strlen(key) + 1);
 	node->value = malloc(strlen(value) + 1);
 	node->next = NULL;
+	if (!node->key || !node->value)
+		return (NULL);
 	/* make a new pointer */
 	strcpy(node->key, key);
 	strcpy(node->value, value);
@@ -37,10 +39,14 @@ hash_node_t *create_node(const char *key, const char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	/* computes the index */
-	size_t index = key_index((const unsigned char *)key, ht->size);
 	hash_node_t *node;
+	size_t index;
 
+	if (!ht)
+		return (0);
+	else
+		/* computes the index */
+		index = key_index((const unsigned char *)key, ht->size);
 	/* check for empty list */
 	if (!ht->array[index])
 		/* key does not exist */
